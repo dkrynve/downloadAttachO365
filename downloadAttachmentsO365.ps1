@@ -3,19 +3,19 @@
 ##-----------------------------------------------------## 
  
 ## HARD CODING PSW    ## 
-#$password = ConvertTo-SecureString "xxx" -AsPlainText -Force 
-#$cred = New-Object System.Management.Automation.PSCredential "xxx@xxx.onmicrosofot.com",$password 
+#$password = ConvertTo-SecureString "tuvieja" -AsPlainText -Force 
+#$cred = New-Object System.Management.Automation.PSCredential "damian.krynveniuk@turner.com",$password 
  
 ## USER PROMPT PSW    ## 
-$cred = Get-Credential 
+#$cred = Get-Credential 
  
 ##-----------------------------------------------------## 
 ##    END PICK 
 ##-----------------------------------------------------## 
  
 $url = "https://outlook.office365.com/api/v1.0/me/messages" 
-$date = "2016-11-10"
-#$date = Get-Date -format yyyy-M-d
+#$date = "2016-11-10"
+$date = Get-Date -format yyyy-M-d
  
 ## Get all messages that have attachments where received date is greater than $date  
 $messageQuery = "" + $url + "?`$select=Id&`$filter=HasAttachments eq true and DateTimeReceived ge " + $date 
